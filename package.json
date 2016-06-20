@@ -1,0 +1,30 @@
+{
+  "name": "rooty",
+  "version": "0.0.1",
+  "description": "A Tiny user management system write in Vanilla.JS",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo 'not implemented yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfabrizio/rooty.git"
+  },
+  "keywords": [
+    "Vanilla.js",
+    "User",
+    "Admin",
+    "Groups"
+  ],
+  "author": "Samuel Fabrizio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sfabrizio/rooty/issues"
+  },
+  "homepage": "https://github.com/sfabrizio/rooty#readme",
+  "devDependencies": {
+    "eslint": "^2.13.0",
+    "http-server": "^0.9.0"
+  }
+}
