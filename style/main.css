@@ -18,7 +18,7 @@ body {
     padding-left: 60px;
     padding-right: 60px;
 }
-    .main-container .content{
+    .main-container .container{
         display:flex;
         flex-direction:column;
         border: 1px solid grey;
@@ -27,6 +27,28 @@ body {
         background-color: white;
 
     }
+
+    .user-container-list, .groups-container-list {
+        width: 50%;
+        border: 1px solid grey;
+    }
+
+    .container .container-title {
+        display: flex;
+        align-items: center;
+    }
+    .container .container-list_header{
+        display: flex;
+        justify-content: space-around;
+    }
+    .container .container-list_body {
+        display: flex;
+        flex-direction: column;
+    }
+        .container .body_row {
+            display: flex;
+            justify-content: space-around;
+        }
 
 /*buttons*/
 .main-container .button {
