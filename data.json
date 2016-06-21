@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "userName": "pepe",
+      "firstName": "Pepe",
+      "lastName": "Rogelio",
+      "group_id": [1],
+      "isAdmin": true
+    },
+    {
+      "userName": "paco",
+      "firstName": "Paco",
+      "lastName": "Gomez",
+      "group_id": [2],
+      "isAdmin": false
+    },
+    {
+      "userName": "lola",
+      "firstName": "Lola",
+      "lastName": "Rodriguez",
+      "group_id": [3],
+      "isAdmin": false
+    },
+    {
+      "userName": "lulu",
+      "firstName": "Lulu",
+      "lastName": "Ocampo",
+      "group_id": [2,3],
+      "isAdmin": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "Admins",
+      "id": 1
+    },
+    {
+      "name": "Users",
+      "id": 2
+    },
+    {
+      "name": "Guests",
+      "id": 3
+    }
+  ]
+}
