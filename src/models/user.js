@@ -1,6 +1,6 @@
 var users = {};
 
-function getMocusers() {
+function getMocUsers() {
 
     return new Promise(function (resolve, reject) {
         let reqObj = new XMLHttpRequest();
@@ -19,4 +19,4 @@ function getMocusers() {
     });
 }
 
-users.getusers = getMocusers;
+users.getUsers = getMocUsers;
