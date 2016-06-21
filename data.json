@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": 1,
       "userName": "pepe",
       "firstName": "Pepe",
       "lastName": "Rogelio",
@@ -8,6 +9,7 @@
       "isAdmin": true
     },
     {
+      "id": 2,
       "userName": "paco",
       "firstName": "Paco",
       "lastName": "Gomez",
@@ -15,6 +17,7 @@
       "isAdmin": false
     },
     {
+      "id": 3,
       "userName": "lola",
       "firstName": "Lola",
       "lastName": "Rodriguez",
@@ -22,6 +25,7 @@
       "isAdmin": false
     },
     {
+      "id": 4,
       "userName": "lulu",
       "firstName": "Lulu",
       "lastName": "Ocampo",
