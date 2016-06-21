@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Rooty</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
-<div id="main-container">
+<div class="main-container">
     <h1>Rooty</h1>
+    <div id="user-container" class="content">
+        <div class="container-title">
+            <h2>Users</h2> <a class="button button__create" href="" onclick="createUser()">Create</a>
+        </div>
+        <div id="user-container-list">
+            <div class="container-list_header">
+                <div class="list-header_column">UserName</div>
+                <div class="list-header_column">ID</div>
+            </div>
+            <div class="container-list_header">
+            </div>
+        </div>
+    </div>
+    <div id="user-detail-container" class="content">
+    </div>
+    <div id="groups-container" class="content">
+        <div class="container-title">
+            <h2>Groups</h2> <a class="button button__create" href="" onclick="createGroups()">Create</a>
+        </div>
+        <div id="groups-container-list">
+            <div class="container-list_header">
+                <div class="list-header_column">Name</div>
+                <div class="list-header_column">Id</div>
+            </div>
+            <div class="container-list_header">
+            </div>
+        </div>
+    </div>
+    <div id="groups-detail-container" class="content">
+    </div>
+
 </div>
 
 <!--js imports-->
