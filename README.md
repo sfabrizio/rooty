@@ -4,10 +4,12 @@ A Tiny user management system write in Vanilla JS on ES6
 
 ## TODO
 
-- Finish the basic app functionality
-- Improve Styles 
+- Finish the basic app functionality: details & deletion 
+- Improve styles
 - Add babel for cross browser compatibility (at the moment It was tested only in Chrome) 
-- Add webpack for build babel bundle
-- Add watcher tasks to npm 
+- Add webpack for build the babel bundle
+- Add watch tasks to npm 
 - Add unit tests with Jasmine
+- Create login page
 - Add more offline functionality 
+- Add search functionality  
