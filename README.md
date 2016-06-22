@@ -15,14 +15,24 @@ npm install
 npm run start
 ```
 
-## TODO
+## TODO (This is a work in progress)
 
-- Finish the basic app functionality: details & deletion 
+- Finish the basic app functionality: assign groups, see details & deletion
+- Add form validations.
 - Improve styles
 - Add babel for cross browser compatibility (at the moment It was tested only in Chrome) 
-- Add webpack for build the babel bundle
-- Add watch tasks to npm 
+- Add webpack for build the bundle.js
+- Add watch tasks to npm
 - Add unit tests with Jasmine
-- Create login page
-- Add more offline functionality 
+- Create login functionality 
+- Add more offline features 
 - Add search functionality  
+- Write a simple backend in Node + Express + MongoDB
+
+
+
+### Note: This is only the FrontEnd part. I'm using mockup data at the moment. But these are the endpoints expected to have on the Backend:
+
+- `/users` with methods [GET,POST, PUT & DELETE]
+- `/groups` with methods [GET,POST, PUT & DELETE]
+- `/login` with method [POST]
