@@ -1,4 +1,6 @@
-var users = {};
+// this return models so this seem to be more a collection than a model.
+
+var userModel = {};
 
 function getMocUsers() {
 
@@ -19,4 +21,4 @@ function getMocUsers() {
     });
 }
 
-users.getUsers = getMocUsers;
+userModel.getUsers = getMocUsers; //replace with the real getUser data method here

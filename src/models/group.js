@@ -1,4 +1,4 @@
-var groups = {};
+var groupModel = {};
 
 function getMocGroups() {
 
@@ -19,4 +19,4 @@ function getMocGroups() {
     });
 }
 
-groups.getGroups = getMocGroups;
+groupModel.getGroups = getMocGroups;
