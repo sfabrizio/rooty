@@ -1,23 +1,51 @@
-users.getUsers().then( (users) => {
-    console.log('users', users);
+var userView = (() => {
+    'use strict';
 
-    let userListDiv = document.getElementById('user-list');
+    init();
 
-    for (let i=0; i < users.length; i++){
-        createUserRow(users[i]);
+    return {
+        loadUsers: loadUsers,
+        showDetail:showDetail,
+        hideDetail: hideDetail
+    };
+
+    /////////////
+
+    function init() {
+        //init userView
+    }
+
+    function loadUsers(users) {
+        for (let i = 0; i < users.length; i++) {
+            createUserRow(users[i]);
+        }
     }
 
     function createUserRow(user) {
-        let rowDiv = document.createElement("div"),
+        let userListDiv = document.getElementById('user-list'),
+            rowDiv = document.createElement("div"),
             name = document.createElement("div"),
             id = document.createElement("div");
 
         rowDiv.className = 'body_row';
         name.textContent = user.userName;
         id.textContent = user.id;
-
         rowDiv.appendChild(name);
         rowDiv.appendChild(id);
         userListDiv.appendChild(rowDiv);
     }
-});
+
+    function showDetail(e) {
+        let modelID = e.target.lastElementChild.innerText,
+            detailUserxDiv = document.querySelector('#user-detail-container');
+        detailUserDiv.style.display = 'block';
+    }
+
+    function hideDetail() {
+        let detailUserxDiv = document.querySelector('#user-detail-container');
+        detailUserDiv.style.display = 'none';
+    }
+})();
+
+
+
