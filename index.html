@@ -7,7 +7,9 @@
 </head>
 <body>
 <div class="main-container">
-    <h1>Rooty</h1>
+    <div class="header">
+        <a href="/">Rooty</a> <span id="connection-status"></span>
+    </div>
     <div id="user-container" class="container">
         <div class="container-title">
             <span><h2>Users</h2></span>
@@ -23,7 +25,11 @@
         </div>
     </div>
 
-    <div id="user-detail-container" class="container">
+    <div id="user-detail-container" class="container" style="display: none">
+        <span>Name:</span><span id="user_firstName"></span>
+        <span>Last Name:</span><span id="user_lastName"></span>
+        <span>is Admin:</span><span id="user_isAdmin"></span>
+        <span>Group id:</span><span id="user_group_id"></span>
     </div>
 
     <div id="groups-container" class="container">
@@ -40,20 +46,20 @@
             </div>
         </div>
     </div>
-    <div id="groups-detail-container" class="container">
+    <div id="groups-detail-container" class="container" style="display: none">
     </div>
 
 </div>
 
 <!--js imports-->
-<!--main-->
-<script src="src/index.js"></script>
 <!--models-->
 <script src="src/models/user.js"></script>
 <script src="src/models/group.js"></script>
 <!--views-->
 <script src="src/views/userView.js"></script>
 <script src="src/views/groupsView.js"></script>
+<!--main-->
+<script src="src/index.js"></script>
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>-->
 </body>
 </html>
