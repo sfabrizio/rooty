@@ -31,7 +31,8 @@ npm run start
 
 
 
-### Note: This is only the FrontEnd part. I'm using mockup data at the moment. But these are the endpoints expected to have on the Backend:
+> **Note:** 
+> This is only the FrontEnd part. I'm using mockup data at the moment. But these are the endpoints expected to have on the Backend:
 
 - `/users` with methods [GET,POST, PUT & DELETE]
 - `/groups` with methods [GET,POST, PUT & DELETE]
