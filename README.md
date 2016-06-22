@@ -2,6 +2,19 @@
 
 A Tiny user management system write in Vanilla JS on ES6
 
+
+## Install 
+
+```
+npm install
+```
+
+## Run
+
+```
+npm run start
+```
+
 ## TODO
 
 - Finish the basic app functionality: details & deletion 
