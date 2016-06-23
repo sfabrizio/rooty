@@ -1,6 +1,6 @@
 # Rooty
 
-A Tiny user management system write in Vanilla JS on ES6
+A Tiny user management system written in Vanilla JS on ES6
 
 
 ## Install 
