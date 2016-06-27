@@ -5,6 +5,11 @@ var userModel = {};
 function getMocUsers() {
 
     return new Promise(function (resolve, reject) {
+
+        if (userModel.users && userModel.users.length > 0) {
+            return userModel.users;
+        }
+
         let reqObj = new XMLHttpRequest();
         reqObj.overrideMimeType("application/json");
         reqObj.open('GET', 'data.json', true); //local file
@@ -21,4 +26,21 @@ function getMocUsers() {
     });
 }
 
-userModel.getUsers = getMocUsers; //replace with the real getUser data method here
+function getUser(userId) {
+    let user = userModel.users.filter( (user) => {
+        return user.id == userId;
+    });
+
+    return user[0] || [];
+}
+
+//replace with the real methods here:
+userModel.getUsers = getMocUsers;
+userModel.getUser = getUser;
+
+
+(function init (){
+    getMocUsers().then( (users) => {
+        userModel.users = users;
+    });
+})();
