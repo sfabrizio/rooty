@@ -62,9 +62,47 @@ body {
         margin-top: 70px;
     }
 
-    .user-container-list, .groups-container-list {
+    .user-container-list, .user-container-create, .groups-container-list {
         width: 50%;
         border: 1px solid grey;
+    }
+
+    .container-row {
+        display: flex;
+    }
+
+    .container label{
+        font-weight: bold;
+    }
+
+    /*user creation widget*/
+    .container .user-container-create .container-list_body {
+        padding: 7px;
+    }
+    .container .user-container-create .container-input {
+        display: flex;
+        flex-direction: column;
+    }
+    .container .user-container-create .container-input .input__row{
+        display: flex;
+        padding-left: 20px;
+    }
+    .container .user-container-create .container-input .input__row div{
+        margin-right: 20px;
+        width: 48%;
+    }
+    .container .user-container-create .container-input .input__row div input,.input__row div select{
+        font-size:16px;
+        border-width:1px;
+        border-radius:4px;
+        border-style:solid;
+        border-color:#a0aba2;
+        padding: 1px;
+        margin-left: 20px;
+    }
+    .container .user-container-create .container-input .input__row div input:focus,.input__row div select:focus {
+        border-color:#17a017;
+        outline:none;
     }
 
     .container .container-title {
@@ -74,10 +112,12 @@ body {
     .container .container-list_header{
         display: flex;
         justify-content: space-around;
+        border-bottom: 1px solid black;
     }
+
     .container .container-list_body {
-        display: flex;
-        flex-direction: column;
+        height: 160px;
+        overflow: auto;
     }
         .container .body_row {
             display: flex;
@@ -86,15 +126,17 @@ body {
         .container .body_row:hover {
             background-color: lightseagreen;
             cursor: pointer;
+            font-weight: bold;
         }
         .container .body_row div{
             pointer-events: none;
         }
 
     #user-detail-container{
-        margin-top: 0px;
+        margin-top: 15px;
         background-color: white;
-        border: 3px solid lightseagreen;
+        border: 2px solid lightseagreen;
+        text-align: center;
         visibility: hidden;
         opacity:0;
         transition: visibility 0s, opacity 0.5s linear;
@@ -109,7 +151,6 @@ body {
         transition: visibility 0s, opacity 0.5s linear;
     }
     #user-detail-container label{
-        font-weight: bold;
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -155,6 +196,10 @@ body {
 
 .main-container .button.button__create {
     background-color: #41c250;
+}
+
+.main-container .button.button__add {
+    background-color: #49aadc;
 }
 
 .main-container .button.button__cancel {
