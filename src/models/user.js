@@ -3,7 +3,7 @@ var userModel = ( () => {
     'use strict';
     var model = {};
 
-    function init () {//fetch users on init
+    function fetchAll () {
         return getMocUsers().then( (users) => {
             model.users = users;
             return users;
@@ -42,11 +42,11 @@ var userModel = ( () => {
         return user[0] || [];
     }
 
+    //////////
 
-    //set user model public methods
-    model.getUsers = getMocUsers;//replace with the real method here
+    model.getUsers = getMocUsers; //replace with the real method here
     model.getUser = getUser;
-    model.init = init;
+    model.fetchAll = fetchAll;
 
     return model;
 })();

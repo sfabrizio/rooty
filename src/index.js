@@ -21,8 +21,8 @@ function initApp() {
         modelGroup;
 
     //do the initial fetchs
-    modelUser = userModel.init();
-    modelGroup = groupModel.init();
+    modelUser = userModel.fetchAll();
+    modelGroup = groupModel.fetchAll();
 
     modelsFetchPromises = [modelUser,modelGroup];
 

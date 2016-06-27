@@ -2,7 +2,7 @@ var groupModel = ( () => {
     'use strict';
     var model = {};
 
-    function init () {//fetch users on init
+    function fetchAll () {
         return getMocGroups().then( (groups) => {
             model.groups = groups;
             return groups;
@@ -29,7 +29,7 @@ var groupModel = ( () => {
 
     ////////////
 
-    model.init = init;
+    model.fetchAll = fetchAll;
     model.getGroups = getMocGroups;
 
     return model;
