@@ -14,7 +14,7 @@ if ( userIsLogged() ){
 }
 
 function initApp() {
-    //connect models with the views:
+    //connect models with the views
     //controller
     let modelsFetchPromises,
         modelUser,
@@ -36,18 +36,19 @@ function initApp() {
         views.groupView.render(groups);
     });
 
-    //load event handling
+    //load event handling after collect & render all data
     Promise.all(modelsFetchPromises).then( () => {
-        loadDetailsEvent();
+        //TODO: make me for real this is a hack for wait the render. find a proper way to do it.
+        setTimeout( () => {
+            loadDetailsEvent();
+        },100);
     });
 }
 
 
 //general app event handling:
 
-
 //show details rows users, groups
-
 function showRelatedDetail(e){
     let modelID = e.target.lastElementChild.innerText,
         relatedView = e.srcElement.parentElement.id === 'group-list' ? views.groupView : views.userView;
