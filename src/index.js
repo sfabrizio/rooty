@@ -1,6 +1,4 @@
-//App Main controller:
-
-var views = {};
+//Main App file:
 
 const userIsLogged = () => {
     //TODO: request to login view here for see if the user is still logged
@@ -13,64 +11,25 @@ if ( userIsLogged() ){
     window.location.href = "/login"; //TODO: have a login page
 }
 
-function initApp() {
-    //connect models with the views
-    //controller
-    let modelsFetchPromises,
-        modelUser,
-        modelGroup;
+function initApp(){
+    'use strict';
+    //collect references
+    let models = {
+            userModel: userModel,
+            groupModel: groupModel
+        },
+        views = {
+            userView: userView,
+            groupView: groupView
+        };
 
-    //init model data
-    modelUser = userModel.fetchAll();
-    modelGroup = groupModel.fetchAll();
-
-    modelsFetchPromises = [modelUser,modelGroup];
-    
-    //init views
-    views.userView = userView;
-    views.groupView = groupView;
-    views.userView.showLoadIndicator();
-
-    //call render
-    modelUser.then( (users) => {
-        views.userView.hideLoadIndicator();
-        views.userView.render(users);
-    });
-
-    modelGroup.then( (groups) => {
-        views.groupView.render(groups);
-    });
-
-    //load event handling after collect & render all data
-    Promise.all(modelsFetchPromises).then( () => {
-        setTimeout( () => {
-            loadDetailsEvent();
-        },100); //just in case.
-    });
+    //load main controller
+    mainController.init(models,views);
 }
 
 
-//general app event handling:
-
-//show details rows users, groups
-function showRelatedDetail(e){
-    let modelID = e.target.lastElementChild.innerText,
-        relatedView = e.srcElement.parentElement.id === 'group-list' ? views.groupView : views.userView;
-    relatedView.showDetail(modelID);
-}
-
-function loadDetailsEvent(){
-    function addEventListenerByClass(className, event, fn) {
-        const list = document.querySelectorAll(className);
-
-        for (let i = 0; i < list.length; i++) {
-            list[i].addEventListener(event, fn, false);
-        }
-    }
-    addEventListenerByClass('.body_row', 'click', showRelatedDetail);
-}
-
-//online-offline status
+//general app event handling
+//check online-offline status
 window.addEventListener('load', function() {
 
     function updateOnlineStatus() {
