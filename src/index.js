@@ -15,7 +15,7 @@ if ( userIsLogged() ){
 
 function initApp() {
     //connect models with the views:
-    userModel.getUsers().then( (users) => {
+    userModel.init().then( (users) => {
         views.userView = userView;
         views.userView.loadUsers(users);
     });

@@ -2,6 +2,13 @@
 
 var userModel = {};
 
+function init (){//fetch users on init
+    return getMocUsers().then( (users) => {
+        userModel.users = users;
+        return users;
+    });
+}
+
 function getMocUsers() {
 
     return new Promise(function (resolve, reject) {
@@ -37,10 +44,5 @@ function getUser(userId) {
 //replace with the real methods here:
 userModel.getUsers = getMocUsers;
 userModel.getUser = getUser;
+userModel.init = init;
 
-
-(function init (){
-    getMocUsers().then( (users) => {
-        userModel.users = users;
-    });
-})();
