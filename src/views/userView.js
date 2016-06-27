@@ -45,7 +45,7 @@ var userView = ( () => {
         setDetailUserDiv(user);
 
         detailUserDiv.className = 'make-hidden';
-        setTimeout( ()=>{//animation
+        setTimeout( ()=> {//animation
             detailUserDiv.className = 'make-visible';
         },300);
     }

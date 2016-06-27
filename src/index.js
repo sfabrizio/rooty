@@ -9,26 +9,44 @@ const userIsLogged = () => {
 
 if ( userIsLogged() ){
     initApp();
-} else {//redirec to login page
+} else {//redirect to login page
     window.location.href = "/login"; //TODO: have a login page
 }
 
 function initApp() {
     //connect models with the views:
-    userModel.init().then( (users) => {
+    //controller
+    let modelsFetchPromises,
+        modelUser,
+        modelGroup;
+
+    //do the initial fetchs
+    modelUser = userModel.init();
+    modelGroup = groupModel.init();
+
+    modelsFetchPromises = [modelUser,modelGroup];
+
+    modelUser.then( (users) => {
         views.userView = userView;
         views.userView.loadUsers(users);
     });
 
-    groupModel.getGroups().then( (groups) => {
+    modelGroup.then( (groups) => {
         views.groupView = groupView;
         views.groupView.loadGroups(groups);
-        loadDetailsEvent(); //TODO: wait to both promises get resolve and then call this method
+    });
+
+    //load event handling
+    Promise.all(modelsFetchPromises).then( () => {
+        loadDetailsEvent();
     });
 }
 
 
-//event handling:
+//general app event handling:
+
+
+//show details rows users, groups
 
 function showRelatedDetail(e){
     let modelID = e.target.lastElementChild.innerText,
@@ -60,4 +78,3 @@ window.addEventListener('load', function() {
     window.addEventListener('online',  updateOnlineStatus);
     window.addEventListener('offline', updateOnlineStatus);
 });
-
