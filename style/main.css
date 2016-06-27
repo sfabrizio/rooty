@@ -1,3 +1,4 @@
+/*global style*/
 body {
     background: #5b6562;
     background-image: url("../images/back-1.png"), url("../images/back-2.png");
@@ -18,142 +19,166 @@ body {
     padding-left: 60px;
     padding-right: 60px;
 }
+/*/global style*/
 
-    /*header*/
-    .main-container .header {
-        background: #136a8a;
-        background: -webkit-linear-gradient(to left, #136a8a , #267871);
-        background: linear-gradient(to left, #283C44 , #1E251E);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding-bottom: 0px;
-        opacity: 0.9;
-        filter: alpha(opacity=40); /* For IE8 and earlier */
-        color: white;
-        display: flex;
-        align-items: center;
-        height: 60px;
-    }
-    .main-container .header a{
-        margin-left: 20px;
-        margin-right: 50px;
-        font-size: 26px;
-        text-decoration: none;
-        color:white;
-    }
-    .main-container .header a:hover, .main-container .header a:active{
-        text-decoration: none;
-        color:white;
-    }
-    /*body content*/
-    .main-container .container{
-        display:flex;
-        flex-direction:column;
-        border: 1px solid grey;
-        padding: 20px;
-        margin-top: 20px;
-        background-color: white;
+/*header*/
+.main-container .header {
+    background: #136a8a;
+    background: -webkit-linear-gradient(to left, #136a8a, #267871);
+    background: linear-gradient(to left, #283C44, #1E251E);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
 
-    }
+.main-container .header a {
+    margin-left: 20px;
+    margin-right: 50px;
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+}
 
-    div#user-container {
-        margin-top: 70px;
-    }
+.main-container .header a:hover, .main-container .header a:active {
+    text-decoration: none;
+    color: white;
+}
+/*/header*/
 
-    .user-container-list, .user-container-create, .groups-container-list {
-        width: 50%;
-        border: 1px solid grey;
-    }
+/*body containers*/
+.main-container .container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: white;
 
-    .container-row {
-        display: flex;
-    }
+}
 
-    .container label{
-        font-weight: bold;
-    }
+div#user-container {
+    margin-top: 70px;
+}
 
-    /*user creation widget*/
-    .container .user-container-create .container-list_body {
-        padding: 7px;
-    }
-    .container .user-container-create .container-input {
-        display: flex;
-        flex-direction: column;
-    }
-    .container .user-container-create .container-input .input__row{
-        display: flex;
-        padding-left: 20px;
-    }
-    .container .user-container-create .container-input .input__row div{
-        margin-right: 20px;
-        width: 48%;
-    }
-    .container .user-container-create .container-input .input__row div input,.input__row div select{
-        font-size:16px;
-        border-width:1px;
-        border-radius:4px;
-        border-style:solid;
-        border-color:#a0aba2;
-        padding: 1px;
-        margin-left: 20px;
-    }
-    .container .user-container-create .container-input .input__row div input:focus,.input__row div select:focus {
-        border-color:#17a017;
-        outline:none;
-    }
+.user-container-list, .user-container-create, .groups-container-list {
+    width: 50%;
+    border: 1px solid grey;
+    margin-left: 10px;
+}
 
-    .container .container-title {
-        display: flex;
-        align-items: center;
-    }
-    .container .container-list_header{
-        display: flex;
-        justify-content: space-around;
-        border-bottom: 1px solid black;
-    }
+.container-row {
+    display: flex;
+}
 
-    .container .container-list_body {
-        height: 160px;
-        overflow: auto;
-    }
-        .container .body_row {
-            display: flex;
-            justify-content: space-around;
-        }
-        .container .body_row:hover {
-            background-color: lightseagreen;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .container .body_row div{
-            pointer-events: none;
-        }
+.container label {
+    font-weight: bold;
+}
 
-    #user-detail-container{
-        margin-top: 15px;
-        background-color: white;
-        border: 2px solid lightseagreen;
-        text-align: center;
-        visibility: hidden;
-        opacity:0;
-        transition: visibility 0s, opacity 0.5s linear;
-    }
-    #user-detail-container.make-visible{
-        visibility: visible;
-        opacity: 1;
-    }
-    #user-detail-container.make-hidden{
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s, opacity 0.5s linear;
-    }
-    #user-detail-container label{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
+.container .container-title {
+    display: flex;
+    align-items: center;
+}
+
+.container .container-list_header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    background: #4e4e4e;
+    color: #00BCD4;
+}
+
+.container .container-list_body {
+    height: 160px;
+    overflow: auto;
+}
+
+.container .body_row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .body_row:hover {
+    background-color: lightseagreen;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container .body_row div {
+    pointer-events: none;
+}
+/*/body containers*/
+
+/*user creation widget*/
+.container .user-container-create .container-list_body {
+    padding: 7px;
+}
+
+.container .user-container-create .container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .user-container-create .container-input .input__row {
+    display: flex;
+    padding-left: 20px;
+}
+
+.container .user-container-create .container-input .input__row div {
+    margin-right: 20px;
+    width: 48%;
+}
+
+.container .user-container-create .container-input .input__row div input, .input__row div select {
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #a0aba2;
+    padding: 1px;
+    margin-left: 20px;
+}
+
+.container .user-container-create .container-input .input__row div input:focus, .input__row div select:focus {
+    border-color: #17a017;
+    outline: none;
+}
+/*/user creation widget*/
+
+/*user detail widget*/
+#user-detail-container {
+    margin-top: 15px;
+    background-color: white;
+    border: 2px solid lightseagreen;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#user-detail-container.make-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+#user-detail-container.make-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#user-detail-container label {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+/*/user detail widget*/
 
 /*online-offline status*/
 #connection-status {
@@ -164,6 +189,7 @@ body {
     padding-left: 5px;
     padding-right: 5px;
 }
+
 #connection-status.online {
     background: lightgray;
     color: green;
@@ -173,11 +199,11 @@ body {
     background: lightgray;
     color: red;
 }
-
+/*/online-offline status*/
 
 /*buttons*/
 .main-container .button {
-    color:white;
+    color: white;
     padding: 5px 13px 5px 12px;
     cursor: pointer;
     border-radius: 3px;
@@ -205,5 +231,4 @@ body {
 .main-container .button.button__cancel {
     background-color: orange;
 }
-
 /*buttons*/
