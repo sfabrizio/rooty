@@ -1,4 +1,4 @@
-var userView = (() => {
+var userView = ( () => {
     'use strict';
 
     init();
@@ -50,7 +50,7 @@ var userView = (() => {
         },300);
     }
 
-    function setDetailUserDiv(user){
+    function setDetailUserDiv(user) {
         let firstName = document.querySelector('#user_firstName'),
             lastName = document.querySelector('#user_lastName'),
             isAdmin = document.querySelector('#user_isAdmin'),

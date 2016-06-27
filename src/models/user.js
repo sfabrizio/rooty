@@ -1,48 +1,52 @@
-// this return models so this seem to be more a collection than a model.
+// Note: this fetch models so this seem to be more a collection than just a model.
+var userModel = ( () => {
+    'use strict';
+    var model = {};
 
-var userModel = {};
+    function init () {//fetch users on init
+        return getMocUsers().then( (users) => {
+            model.users = users;
+            return users;
+        });
+    }
 
-function init (){//fetch users on init
-    return getMocUsers().then( (users) => {
-        userModel.users = users;
-        return users;
-    });
-}
+    function getMocUsers() {
 
-function getMocUsers() {
+        return new Promise(function (resolve, reject) {
 
-    return new Promise(function (resolve, reject) {
-
-        if (userModel.users && userModel.users.length > 0) {
-            return userModel.users;
-        }
-
-        let reqObj = new XMLHttpRequest();
-        reqObj.overrideMimeType("application/json");
-        reqObj.open('GET', 'data.json', true); //local file
-        reqObj.onreadystatechange = () => {
-            if (reqObj.readyState == 4 && reqObj.status == "200") {
-                //avoid async mode with the callback
-                let data = JSON.parse(reqObj.responseText);
-                resolve(data.users);
-            } else if (reqObj.readyState == 4 && reqObj.status != "200") {
-                reject('loading error');
+            if (model.users && model.users.length > 0) {
+                return model.users;
             }
-        };
-        reqObj.send(null);
-    });
-}
 
-function getUser(userId) {
-    let user = userModel.users.filter( (user) => {
-        return user.id == userId;
-    });
+            let reqObj = new XMLHttpRequest();
 
-    return user[0] || [];
-}
+            reqObj.overrideMimeType("application/json");
+            reqObj.open('GET', 'data.json', true); //local file
+            reqObj.onreadystatechange = () => {
+                if (reqObj.readyState == 4 && reqObj.status == "200") {
+                    const data = JSON.parse(reqObj.responseText);
+                    resolve(data.users);
+                } else if (reqObj.readyState == 4 && reqObj.status != "200") {
+                    reject('loading error');
+                }
+            };
+            reqObj.send(null);
+        });
+    }
 
-//replace with the real methods here:
-userModel.getUsers = getMocUsers;
-userModel.getUser = getUser;
-userModel.init = init;
+    function getUser(userId) {
+        let user = model.users.filter( (user) => {
+            return user.id == userId;
+        });
 
+        return user[0] || [];
+    }
+
+
+    //set user model public methods
+    model.getUsers = getMocUsers;//replace with the real method here
+    model.getUser = getUser;
+    model.init = init;
+
+    return model;
+})();
