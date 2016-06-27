@@ -2,6 +2,13 @@ var groupModel = ( () => {
     'use strict';
     var model = {};
 
+    function init () {//fetch users on init
+        return getMocGroups().then( (groups) => {
+            model.groups = groups;
+            return groups;
+        });
+    }
+
     function getMocGroups() {
 
         return new Promise(function (resolve, reject) {
@@ -20,8 +27,10 @@ var groupModel = ( () => {
         });
     }
 
+    ////////////
+
+    model.init = init;
     model.getGroups = getMocGroups;
 
     return model;
-
 })();
