@@ -1,11 +1,12 @@
 {
   "name": "rooty",
-  "version": "0.0.1",
-  "description": "A Tiny user management system write in Vanilla.JS",
-  "main": "app.js",
+  "version": "0.0.2",
+  "description": "A Tiny user management system written in Vanilla.JS",
+  "main": "index.js",
   "scripts": {
-    "start": "http-server",
-    "test": "echo 'not implemented yet'"
+    "start": "watch-http-server -o",
+    "test": "echo 'not implemented yet'",
+    "preinstall": "npm i -g watch-http-server"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,6 @@
   },
   "homepage": "https://github.com/sfabrizio/rooty#readme",
   "devDependencies": {
-    "eslint": "^2.13.0",
-    "http-server": "^0.9.0"
+    "eslint": "^2.13.0"
   }
 }

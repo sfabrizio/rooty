@@ -22,7 +22,6 @@ npm run start
 - Improve styles
 - Add babel for cross browser compatibility (at the moment It was tested only in Chrome) 
 - Add webpack for build the bundle.js
-- Add watch tasks to npm
 - Add unit tests with Jasmine
 - Create login functionality 
 - Add more offline features 
