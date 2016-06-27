@@ -61,6 +61,22 @@
     {
       "name": "Guests",
       "id": 3
+    },
+    {
+      "name": "Viewers",
+      "id": 4
+    },
+    {
+      "name": "Report",
+      "id": 5
+    },
+    {
+      "name": "Student",
+      "id": 6
+    },
+    {
+      "name": "Master",
+      "id": 7
     }
   ]
 }
