@@ -92,8 +92,26 @@ body {
         }
 
     #user-detail-container{
-        display: flex;
-        justify-content: space-around;
+        margin-top: 0px;
+        background-color: white;
+        border: 3px solid lightseagreen;
+        visibility: hidden;
+        opacity:0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+    #user-detail-container.make-visible{
+        visibility: visible;
+        opacity: 1;
+    }
+    #user-detail-container.make-hidden{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+    #user-detail-container label{
+        font-weight: bold;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
 /*online-offline status*/
