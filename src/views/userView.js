@@ -1,18 +1,35 @@
 var userView = ( () => {
     'use strict';
+    var self = this;
 
     init();
 
     return {
         render: render,
         showDetail:showDetail,
-        hideDetail: hideDetail
+        hideDetail: hideDetail,
+        showLoadIndicator: showLoadIndicator,
+        hideLoadIndicator: hideLoadIndicator
     };
 
     /////////////
 
     function init() {
-        //init userView
+        //init stuff
+        self.userListDiv = document.getElementById('user-list');
+
+        //loading gif
+        let img = document.createElement("img");
+        img.src = '/images/loader.gif';
+        self.loadImage = img;
+    }
+
+    function showLoadIndicator () {
+        self.userListDiv.appendChild(self.loadImage);
+    }
+
+    function hideLoadIndicator () {
+        self.userListDiv.innerHTML = "";
     }
 
     function render(users) {
@@ -22,8 +39,7 @@ var userView = ( () => {
     }
 
     function createUserRow(user) {
-        let userListDiv = document.getElementById('user-list'),
-            rowDiv = document.createElement("div"),
+        let rowDiv = document.createElement("div"),
             name = document.createElement("div"),
             id = document.createElement("div");
 
@@ -33,7 +49,7 @@ var userView = ( () => {
         rowDiv.appendChild(name);
         rowDiv.appendChild(id);
         // rowDiv.setAttribute('id',`row-user-${user.id}`);
-        userListDiv.appendChild(rowDiv);
+        self.userListDiv.appendChild(rowDiv);
     }
 
     function showDetail(userId) {

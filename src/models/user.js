@@ -25,7 +25,9 @@ var userModel = ( () => {
             reqObj.onreadystatechange = () => {
                 if (reqObj.readyState == 4 && reqObj.status == "200") {
                     const data = JSON.parse(reqObj.responseText);
-                    resolve(data.users);
+                    setTimeout( () => {
+                        resolve(data.users);
+                    },3000);
                 } else if (reqObj.readyState == 4 && reqObj.status != "200") {
                     reject('loading error');
                 }

@@ -20,28 +20,32 @@ function initApp() {
         modelUser,
         modelGroup;
 
-    //do the initial fetchs
+    //init model data
     modelUser = userModel.fetchAll();
     modelGroup = groupModel.fetchAll();
 
     modelsFetchPromises = [modelUser,modelGroup];
+    
+    //init views
+    views.userView = userView;
+    views.groupView = groupView;
+    views.userView.showLoadIndicator();
 
+    //call render
     modelUser.then( (users) => {
-        views.userView = userView;
+        views.userView.hideLoadIndicator();
         views.userView.render(users);
     });
 
     modelGroup.then( (groups) => {
-        views.groupView = groupView;
         views.groupView.render(groups);
     });
 
     //load event handling after collect & render all data
     Promise.all(modelsFetchPromises).then( () => {
-        //TODO: make me for real this is a hack for wait the render. find a proper way to do it.
         setTimeout( () => {
             loadDetailsEvent();
-        },100);
+        },100); //just in case.
     });
 }
 

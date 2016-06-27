@@ -100,6 +100,15 @@ div#user-container {
     overflow: auto;
 }
 
+/*spinner*/
+.container .container-list_body img{
+    position: relative;
+    left: 50%;
+    top: 40%;
+    height: 25px;
+}
+/*/spinner*/
+
 .container .body_row {
     display: flex;
     justify-content: space-around;
