@@ -87,6 +87,9 @@ body {
             background-color: lightseagreen;
             cursor: pointer;
         }
+        .container .body_row div{
+            pointer-events: none;
+        }
 
     #user-detail-container{
         display: flex;
