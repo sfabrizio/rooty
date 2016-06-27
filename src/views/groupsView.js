@@ -4,7 +4,7 @@ var groupView = (() => {
     init();
 
     return {
-        loadGroups: loadGroups,
+        render: render,
         showDetail:showDetail,
         hideDetail: hideDetail
     };
@@ -15,7 +15,7 @@ var groupView = (() => {
         //init groupView
     }
 
-    function loadGroups(groups) {
+    function render(groups) {
         for (let i = 0; i < groups.length; i++) {
             createGroupRow(groups[i]);
         }

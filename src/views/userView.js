@@ -4,7 +4,7 @@ var userView = ( () => {
     init();
 
     return {
-        loadUsers: loadUsers,
+        render: render,
         showDetail:showDetail,
         hideDetail: hideDetail
     };
@@ -15,7 +15,7 @@ var userView = ( () => {
         //init userView
     }
 
-    function loadUsers(users) {
+    function render(users) {
         for (let i = 0; i < users.length; i++) {
             createUserRow(users[i]);
         }

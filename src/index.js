@@ -28,12 +28,12 @@ function initApp() {
 
     modelUser.then( (users) => {
         views.userView = userView;
-        views.userView.loadUsers(users);
+        views.userView.render(users);
     });
 
     modelGroup.then( (groups) => {
         views.groupView = groupView;
-        views.groupView.loadGroups(groups);
+        views.groupView.render(groups);
     });
 
     //load event handling
