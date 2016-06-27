@@ -17,15 +17,10 @@ var userView = ( () => {
     function init() {
         //init stuff
         self.userListDiv = document.getElementById('user-list');
-
-        //loading gif
-        let img = document.createElement("img");
-        img.src = '/images/loader.gif';
-        self.loadImage = img;
     }
 
     function showLoadIndicator () {
-        self.userListDiv.appendChild(self.loadImage);
+        //TODO
     }
 
     function hideLoadIndicator () {

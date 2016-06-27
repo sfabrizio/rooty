@@ -27,7 +27,7 @@ var mainController = ( () => {
         //init views
         views.userView = userView;
         views.groupView = groupView;
-        views.userView.showLoadIndicator();
+
 
         //call render
         modelUser.then( (users) => {
@@ -36,6 +36,7 @@ var mainController = ( () => {
         });
 
         modelGroup.then( (groups) => {
+            views.groupView.hideLoadIndicator();
             views.groupView.render(groups);
         });
 

@@ -18,7 +18,9 @@ var groupModel = ( () => {
             reqObj.onreadystatechange = () => {
                 if (reqObj.readyState == 4 && reqObj.status == "200") {
                     const data = JSON.parse(reqObj.responseText);
-                    resolve(data.groups);
+                    setTimeout( () => {
+                        resolve(data.groups);
+                    },2000);
                 } else if (reqObj.readyState == 4 && reqObj.status != "200") {
                     reject('loading error');
                 }

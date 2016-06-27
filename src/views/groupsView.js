@@ -1,18 +1,29 @@
 var groupView = (() => {
     'use strict';
+    var self = this;
 
     init();
 
     return {
         render: render,
         showDetail:showDetail,
-        hideDetail: hideDetail
+        showLoadIndicator: showLoadIndicator,
+        hideLoadIndicator: hideLoadIndicator
     };
 
     /////////////
 
     function init() {
-        //init groupView
+        //init stuff
+        self.groupListDiv = document.getElementById('group-list');
+    }
+
+    function showLoadIndicator () {
+        //TODO
+    }
+
+    function hideLoadIndicator () {
+        self.groupListDiv.innerHTML = "";
     }
 
     function render(groups) {
@@ -36,14 +47,9 @@ var groupView = (() => {
     }
 
     function showDetail(modelID) {
-        let detailGroupxDiv = document.querySelector('#group-detail-container');
-        detailGroupDiv.style.display = 'block';
+        //TODO
     }
 
-    function hideDetail() {
-        let detailGroupxDiv = document.querySelector('#group-detail-container');
-        detailGroupDiv.style.display = 'none';
-    }
 })();
 
 
