@@ -31,6 +31,22 @@
       "lastName": "Ocampo",
       "group_id": [2,3],
       "isAdmin": false
+    },
+    {
+      "id": 5,
+      "userName": "mil",
+      "firstName": "Milu",
+      "lastName": "Fab",
+      "group_id": [1],
+      "isAdmin": false
+    },
+    {
+      "id": 6,
+      "userName": "jane",
+      "firstName": "Jane",
+      "lastName": "Tar",
+      "group_id": [2,3],
+      "isAdmin": false
     }
   ],
   "groups": [
