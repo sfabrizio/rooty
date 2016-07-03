@@ -1,6 +1,6 @@
 {
   "name": "rooty",
-  "version": "0.0.2",
+  "version": "0.1.1",
   "description": "A Tiny user management system written in Vanilla.JS",
   "main": "index.js",
   "scripts": {
