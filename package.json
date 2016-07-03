@@ -25,6 +25,14 @@
   },
   "homepage": "https://github.com/sfabrizio/rooty#readme",
   "devDependencies": {
-    "eslint": "^2.13.0"
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^2.13.0",
+    "eslint-loader": "^1.3.0",
+    "webpack": "^1.13.1"
   }
 }
