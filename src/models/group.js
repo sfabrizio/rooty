@@ -1,5 +1,4 @@
-var groupModel = ( () => {
-    'use strict';
+export default ( () => {
     var model = {};
 
     function fetchAll () {

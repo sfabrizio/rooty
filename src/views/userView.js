@@ -1,8 +1,7 @@
-var userView = ( () => {
-    'use strict';
-    var self = this;
+export default ( () => {
+    var self = {};
 
-    init();
+    self.userListDiv = document.getElementById('user-list');
 
     return {
         render: render,
@@ -16,7 +15,6 @@ var userView = ( () => {
 
     function init() {
         //init stuff
-        self.userListDiv = document.getElementById('user-list');
     }
 
     function showLoadIndicator () {
@@ -24,7 +22,7 @@ var userView = ( () => {
     }
 
     function hideLoadIndicator () {
-        self.userListDiv.innerHTML = "";
+        self.userListDiv.innerHTML = '';
     }
 
     function render(users) {
@@ -34,9 +32,9 @@ var userView = ( () => {
     }
 
     function createUserRow(user) {
-        let rowDiv = document.createElement("div"),
-            name = document.createElement("div"),
-            id = document.createElement("div");
+        let rowDiv = document.createElement('div'),
+            name = document.createElement('div'),
+            id = document.createElement('div');
 
         rowDiv.className = 'body_row';
         name.textContent = user.userName;
@@ -48,7 +46,7 @@ var userView = ( () => {
     }
 
     function showDetail(userId) {
-        if (!userId) return;
+        if (!userId) { return; }
 
         let detailUserDiv = document.querySelector('#user-detail-container'),
             user = userModel.getUser(userId);
@@ -79,6 +77,3 @@ var userView = ( () => {
         detailUserDiv.className = 'make-hidden';
     }
 })();
-
-
-

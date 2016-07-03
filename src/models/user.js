@@ -1,6 +1,4 @@
-// Note: this fetch models so this seem to be more a collection than just a model.
-var userModel = ( () => {
-    'use strict';
+export default ( () => {
     var model = {};
 
     function fetchAll () {

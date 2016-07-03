@@ -1,7 +1,5 @@
-//for now one controller is enough
-var mainController = ( () => {
-    'use strict';
-    var self = this;
+export default ( () => {
+    var self = {};
 
     return {
         init : init
@@ -16,18 +14,13 @@ var mainController = ( () => {
             modelUser,
             modelGroup;
 
-        self.views = views;// store view references
+        self.views = { views };// store view references
 
         //init model data
         modelUser = models.userModel.fetchAll();
         modelGroup = models.groupModel.fetchAll();
 
         modelsFetchPromises = [modelUser,modelGroup];
-
-        //init views
-        views.userView = userView;
-        views.groupView = groupView;
-
 
         //call render
         modelUser.then( (users) => {
@@ -66,5 +59,4 @@ var mainController = ( () => {
         }
         addEventListenerByClass('.body_row', 'click', showRelatedDetail);
     }
-
 })();

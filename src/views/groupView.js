@@ -1,6 +1,5 @@
-var groupView = (() => {
-    'use strict';
-    var self = this;
+export default ( () => {
+    var self = {};
 
     init();
 
@@ -49,9 +48,7 @@ var groupView = (() => {
     function showDetail(modelID) {
         //TODO
     }
-
 })();
-
 
 
 
