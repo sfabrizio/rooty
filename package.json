@@ -4,8 +4,10 @@
   "description": "A Tiny user management system written in Vanilla.JS",
   "main": "index.js",
   "scripts": {
-    "start": "watch-http-server -o",
+    "start": "watch-http-server",
     "test": "echo 'not implemented yet'",
+    "build": "NODE_ENV=production webpack",
+    "dev": "webpack --progress --colors --watch & watch-http-server -o ",
     "preinstall": "npm i -g watch-http-server"
   },
   "repository": {
