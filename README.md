@@ -9,25 +9,22 @@ A Tiny user management system written in Vanilla JS on ES6
 npm install
 ```
 
-## Run
+## Run dev server with hot reloading
 
 ```
-npm run start
+npm run dev
 ```
 
 ## TODO (This is a work in progress)
 
-- Finish the basic app functionality: assign groups, see details & deletion
+- Finish the basic app functionality: assign groups & deletion
 - Add form validations.
-- Improve styles
-- Add babel for cross browser compatibility (at the moment It was tested only in Chrome) 
-- Add webpack for build the bundle.js
 - Add unit tests with Jasmine
+- Add SASS & migrate existing CSS
 - Create login functionality 
 - Add more offline features 
 - Add search functionality  
 - Write a simple backend in Node + Express + MongoDB
-
 
 
 > **Note:** 
