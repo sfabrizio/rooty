@@ -1,7 +1,6 @@
 {
   "ecmaFeatures": {
     "globalReturn": true,
-//    "jsx": true, ot for now
     "modules": true
   },
   "extends": [
@@ -13,11 +12,11 @@
     "node": true
   },
   "globals": {
-//    "document": false,
+    "document": true,
+    "window": true,
+    "navigator": true,
     "escape": false,
-//    "navigator": false,
     "unescape": false,
-//    "window": false,
     "describe": true,
     "before": true,
     "it": true,
@@ -42,16 +41,16 @@
     "block-scoped-var": 1,
     "strict": [1, "function"],
     "indent": 1,
-    "camelcase": [1, { "properties": "always" }],
+    "camelcase": [2, { "properties": "always" }],
     "curly": 1,
     "quotes": [1, "single", "avoid-escape"],
-    "eqeqeq": 1,
+    "eqeqeq": [1, "smart"],
     "newline-after-var": [1, "always"],
     "no-self-compare": 1,
     "brace-style": [1, "1tbs", { "allowSingleLine": true }],
     "eol-last": 0,
     "padded-blocks": [1, "never"],
-    "space-after-keywords": [1, "always"],
+    "keyword-spacing": 1,
     "space-before-function-paren": [0, "never"],
     "space-before-blocks": [1, "always"],
     "one-var": [1, "always"],
