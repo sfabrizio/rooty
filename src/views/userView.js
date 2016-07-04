@@ -1,21 +1,19 @@
-export default ( () => {
-    var self = {};
+import userModel from '../models/user';
+
+export default ( (userModel) => {
+    const self = {};
 
     self.userListDiv = document.getElementById('user-list');
 
     return {
-        render: render,
-        showDetail:showDetail,
-        hideDetail: hideDetail,
-        showLoadIndicator: showLoadIndicator,
-        hideLoadIndicator: hideLoadIndicator
+        render,
+        showDetail,
+        hideDetail,
+        showLoadIndicator,
+        hideLoadIndicator
     };
 
     /////////////
-
-    function init() {
-        //init stuff
-    }
 
     function showLoadIndicator () {
         //TODO
@@ -32,7 +30,7 @@ export default ( () => {
     }
 
     function createUserRow(user) {
-        let rowDiv = document.createElement('div'),
+        const rowDiv = document.createElement('div'),
             name = document.createElement('div'),
             id = document.createElement('div');
 
@@ -48,19 +46,19 @@ export default ( () => {
     function showDetail(userId) {
         if (!userId) { return; }
 
-        let detailUserDiv = document.querySelector('#user-detail-container'),
+        const detailUserDiv = document.querySelector('#user-detail-container'),
             user = userModel.getUser(userId);
 
         setDetailUserDiv(user);
 
         detailUserDiv.className = 'make-hidden';
-        setTimeout( ()=> {//animation
+        setTimeout( () => {//animation
             detailUserDiv.className = 'make-visible';
         },300);
     }
 
     function setDetailUserDiv(user) {
-        let firstName = document.querySelector('#user_firstName'),
+        const firstName = document.querySelector('#user_firstName'),
             lastName = document.querySelector('#user_lastName'),
             isAdmin = document.querySelector('#user_isAdmin'),
             groupId = document.querySelector('#user_group_id');
@@ -69,11 +67,11 @@ export default ( () => {
         lastName.textContent = user.lastName;
         isAdmin.textContent = user.isAdmin;
         groupId.textContent = user.group_id;
-
     }
 
     function hideDetail() {
-        let detailUserDiv = document.querySelector('#user-detail-container');
+        const detailUserDiv = document.querySelector('#user-detail-container');
+
         detailUserDiv.className = 'make-hidden';
     }
-})();
+})(userModel);

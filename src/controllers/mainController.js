@@ -1,26 +1,17 @@
 export default ( () => {
-    var self = {};
+    const self = {};
 
-    return {
-        init : init
-    };
+    return { init };
 
     ///////////////
 
     function init(models,views) {
-        //connect models with the views
-        //controller
-        let modelsFetchPromises,
-            modelUser,
-            modelGroup;
+        //init model data
+        const modelUser = models.userModel.fetchAll(),
+            modelGroup = models.groupModel.fetchAll(),
+            modelsFetchPromises = [modelUser,modelGroup];
 
         self.views = { views };// store view references
-
-        //init model data
-        modelUser = models.userModel.fetchAll();
-        modelGroup = models.groupModel.fetchAll();
-
-        modelsFetchPromises = [modelUser,modelGroup];
 
         //call render
         modelUser.then( (users) => {
@@ -43,13 +34,14 @@ export default ( () => {
 
 
     //show details rows users, groups
-    function showRelatedDetail(e){
-        let modelID = e.target.lastElementChild.innerText,
+    function showRelatedDetail(e) {
+        const modelID = e.target.lastElementChild.innerText,
             relatedView = e.srcElement.parentElement.id === 'group-list' ? self.views.groupView : self.views.userView;
+
         relatedView.showDetail(modelID);
     }
 
-    function loadDetailsEvent(){
+    function loadDetailsEvent() {
         function addEventListenerByClass(className, event, fn) {
             const list = document.querySelectorAll(className);
 

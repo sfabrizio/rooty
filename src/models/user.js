@@ -1,5 +1,5 @@
 export default ( () => {
-    var model = {};
+    const model = {};
 
     function fetchAll () {
         return getMocUsers().then( (users) => {
@@ -9,24 +9,23 @@ export default ( () => {
     }
 
     function getMocUsers() {
-
-        return new Promise(function (resolve, reject) {
-
+        return new Promise( (resolve, reject) => {
             if (model.users && model.users.length > 0) {
                 return model.users;
             }
 
-            let reqObj = new XMLHttpRequest();
+            const reqObj = new XMLHttpRequest();
 
-            reqObj.overrideMimeType("application/json");
+            reqObj.overrideMimeType('application/json');
             reqObj.open('GET', 'data.json', true); //local file
             reqObj.onreadystatechange = () => {
-                if (reqObj.readyState == 4 && reqObj.status == "200") {
+                if (reqObj.readyState === 4 && reqObj.status === 200) {
                     const data = JSON.parse(reqObj.responseText);
+
                     setTimeout( () => {
                         resolve(data.users);
                     },3000);
-                } else if (reqObj.readyState == 4 && reqObj.status != "200") {
+                } else if (reqObj.readyState === 4 && reqObj.status !== 200) {
                     reject('loading error');
                 }
             };
@@ -35,8 +34,8 @@ export default ( () => {
     }
 
     function getUser(userId) {
-        let user = model.users.filter( (user) => {
-            return user.id == userId;
+        const user = model.users.filter( (user) => {
+            return user.id === userId;
         });
 
         return user[0] || [];

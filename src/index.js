@@ -10,7 +10,7 @@ const userIsLogged = () => {
     return true;
 };
 
-if ( userIsLogged() ){
+if ( userIsLogged() ) {
     initApp();
 } else {//redirect to login page
     window.location.href = '/login'; //TODO: have a login page
@@ -18,14 +18,13 @@ if ( userIsLogged() ){
 
 function initApp() {
     //collect references
-
-    let models = {
-            userModel: userModel,
-            groupModel: groupModel
+    const models = {
+            userModel,
+            groupModel
         },
         views = {
-            userView: userView,
-            groupView: groupView
+            userView,
+            groupView
         };
 
     //load main controller
@@ -36,10 +35,10 @@ function initApp() {
 //general app event handling
 //check online-offline status
 window.addEventListener('load', () => {
-
     function updateOnlineStatus() {
-        let status = document.getElementById('connection-status');
-        const condition = navigator.onLine ? 'online' : 'offline';
+        const status = document.getElementById('connection-status'),
+            condition = navigator.onLine ? 'online' : 'offline';
+
         status.className = condition;
         status.innerHTML = condition.toUpperCase();
     }

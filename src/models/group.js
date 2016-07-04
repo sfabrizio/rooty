@@ -1,5 +1,5 @@
 export default ( () => {
-    var model = {};
+    const model = {};
 
     function fetchAll () {
         return getMocGroups().then( (groups) => {
@@ -9,18 +9,19 @@ export default ( () => {
     }
 
     function getMocGroups() {
+        return new Promise( (resolve, reject) => {
+            const reqObj = new XMLHttpRequest();
 
-        return new Promise(function (resolve, reject) {
-            let reqObj = new XMLHttpRequest();
-            reqObj.overrideMimeType("application/json");
+            reqObj.overrideMimeType('application/json');
             reqObj.open('GET', 'data.json', true); //local file
             reqObj.onreadystatechange = () => {
-                if (reqObj.readyState == 4 && reqObj.status == "200") {
+                if (reqObj.readyState === 4 && reqObj.status === 200) {
                     const data = JSON.parse(reqObj.responseText);
+
                     setTimeout( () => {
                         resolve(data.groups);
                     },2000);
-                } else if (reqObj.readyState == 4 && reqObj.status != "200") {
+                } else if (reqObj.readyState === 4 && reqObj.status !== 200) {
                     reject('loading error');
                 }
             };

@@ -1,13 +1,13 @@
 export default ( () => {
-    var self = {};
+    const self = {};
 
     init();
 
     return {
-        render: render,
-        showDetail:showDetail,
-        showLoadIndicator: showLoadIndicator,
-        hideLoadIndicator: hideLoadIndicator
+        render,
+        showDetail,
+        showLoadIndicator,
+        hideLoadIndicator
     };
 
     /////////////
@@ -22,7 +22,7 @@ export default ( () => {
     }
 
     function hideLoadIndicator () {
-        self.groupListDiv.innerHTML = "";
+        self.groupListDiv.innerHTML = '';
     }
 
     function render(groups) {
@@ -32,10 +32,10 @@ export default ( () => {
     }
 
     function createGroupRow(group) {
-        let groupListDiv = document.getElementById('group-list'),
-            rowDiv = document.createElement("div"),
-            name = document.createElement("div"),
-            id = document.createElement("div");
+        const groupListDiv = document.getElementById('group-list'),
+            rowDiv = document.createElement('div'),
+            name = document.createElement('div'),
+            id = document.createElement('div');
 
         rowDiv.className = 'body_row';
         name.textContent = group.name;
@@ -49,6 +49,3 @@ export default ( () => {
         //TODO
     }
 })();
-
-
-
