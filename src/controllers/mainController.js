@@ -11,17 +11,17 @@ export default ( () => {
             modelGroup = models.groupModel.fetchAll(),
             modelsFetchPromises = [modelUser,modelGroup];
 
-        self.views = { views };// store view references
+        self.views = { ...views };// store view references
 
         //call render
         modelUser.then( (users) => {
-            views.userView.hideLoadIndicator();
-            views.userView.render(users);
+            self.views.userView.hideLoadIndicator();
+            self.views.userView.render(users);
         });
 
         modelGroup.then( (groups) => {
-            views.groupView.hideLoadIndicator();
-            views.groupView.render(groups);
+            self.views.groupView.hideLoadIndicator();
+            self.views.groupView.render(groups);
         });
 
         //load event handling after collect & render all data
@@ -38,7 +38,7 @@ export default ( () => {
         const modelID = e.target.lastElementChild.innerText,
             relatedView = e.srcElement.parentElement.id === 'group-list' ? self.views.groupView : self.views.userView;
 
-        relatedView.showDetail(modelID);
+        relatedView.showDetail(+modelID);
     }
 
     function loadDetailsEvent() {
