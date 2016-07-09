@@ -1,10 +1,10 @@
-var debug = process.env.NODE_ENV !== 'production',
+const debug = process.env.NODE_ENV !== 'production',
     webpack = require('webpack');
 
 module.exports = {
     context: __dirname,
     devtool: debug ? 'inline-sourcemap' : null,
-    entry: './src/index.js',
+    entry: './src/client/index.js',
     output: {
         path: __dirname + '/lib',
         filename: 'scripts.min.js'
