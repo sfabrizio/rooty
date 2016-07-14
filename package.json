@@ -7,11 +7,14 @@
     "start": "watch-http-server",
     "test": "echo 'not implemented yet'",
     "build": "NODE_ENV=production webpack",
-    "dev": "webpack --progress --colors --watch & watch-http-server -o ",
+    "dev": "webpack --progress --colors --watch & watch-http-server -o",
     "preinstall": "npm i -g watch-http-server"
   },
   "engines": {
     "node": "6.3.0"
+  },
+  "babel":{
+    "presets": ["es2015", "stage-0"]
   },
   "repository": {
     "type": "git",
