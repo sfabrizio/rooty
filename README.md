@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/sfabrizio/rooty.svg?branch=master)](https://travis-ci.org/sfabrizio/rooty)
-# Rooty
-
+# Rooty [![Build Status](https://travis-ci.org/sfabrizio/rooty.svg?branch=master)](https://travis-ci.org/sfabrizio/rooty)
 
 A Tiny user management system written in Vanilla JS on ES6
 
