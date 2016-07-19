@@ -1,4 +1,8 @@
-# Rooty [![Build Status](https://travis-ci.org/sfabrizio/rooty.svg?branch=master)](https://travis-ci.org/sfabrizio/rooty)
+[![Build Status](https://travis-ci.org/sfabrizio/rooty.svg?branch=master)](https://travis-ci.org/sfabrizio/rooty)
+[![bitHound Overall Score](https://www.bithound.io/github/sfabrizio/rooty/badges/score.svg)](https://www.bithound.io/github/sfabrizio/rooty)
+[![bitHound Dependencies](https://www.bithound.io/github/sfabrizio/rooty/badges/dependencies.svg)](https://www.bithound.io/github/sfabrizio/rooty/master/dependencies/npm)
+
+# Rooty
 
 A Tiny user management system written in Vanilla JS on ES6
 
@@ -20,7 +24,7 @@ npm run dev
 - Finish the basic app functionality: assign groups & deletion
 - Add form validations.
 - Add unit tests with Jasmine
-- Add SASS & migrate existing CSS
+- build of SASS file & migrate existing CSS
 - Create login functionality 
 - Add more offline features 
 - Add search functionality  
