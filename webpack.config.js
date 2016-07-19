@@ -1,13 +1,14 @@
-const debug = process.env.NODE_ENV !== 'production',
+const debug = process.env.NODE_ENV !== 'production', //process.env.npm_lifecycle_event
     webpack = require('webpack'),
     path = require('path');
+
 
 module.exports = {
     context: __dirname,
     devtool: debug ? 'inline-sourcemap' : null,
-    entry: path.join(__dirname, 'src', 'client','index.js'),
+    entry: [path.join(__dirname, 'src', 'client','index.js')],
     output: {
-        path: path.join(__dirname, 'lib'),
+        path: path.join(__dirname, 'build'),
         filename: 'scripts.min.js'
     },
     module: {
@@ -21,10 +22,6 @@ module.exports = {
                 test: /(\.jsx|\.js)$/,
                 loader: 'eslint-loader',
                 exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
             }
         ]
     },
