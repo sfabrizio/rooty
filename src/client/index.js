@@ -4,8 +4,6 @@ import userView from './views/userView';
 import groupView from './views/groupView';
 import mainController from './controllers/mainController';
 
-//import main style file
-import './static/style/main.scss';
 
 const userIsLogged = () => {
     //TODO: request to login view here for see if the user is still logged
