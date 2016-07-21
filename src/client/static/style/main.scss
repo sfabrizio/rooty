@@ -1,7 +1,7 @@
-/*global style*/
-body {
+
+body {/*global style*/
   background: grey;
-  /*background-image: url("../images/back-1.png"), url("..!**!/images/back-2.png");*/
+  /*background-image: url("../images/back-1.png"), url("../images/back-2.png");*/
   background-repeat: repeat-x, repeat;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
@@ -10,7 +10,7 @@ body {
   text-align: justify;
   text-justify: inter-word;
   position: relative;
-}
+}/*/global style*/
 
 .main-container {
   display: flex;
@@ -18,7 +18,6 @@ body {
   padding: 20px;
   padding-left: 60px;
   padding-right: 60px;
-  /*header*/
   .header {
     background: #136a8a;
     background: -webkit-linear-gradient(to left, #136a8a, #267871);
@@ -45,10 +44,8 @@ body {
       text-decoration: none;
       color: white;
     }
-  }
-  /*/header*/
+  }/*header*/
 }
-/*/global style*/
 
 /*body containers*/
 .main-container .container {
@@ -167,48 +164,45 @@ div#user-container {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
-}
 
-#user-detail-container.make-visible {
-  visibility: visible;
-  opacity: 1;
-}
+  &.make-visible {
+    visibility: visible;
+    opacity: 1;
+  }
 
-#user-detail-container.make-hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
+  &.make-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
 
-#user-detail-container label {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-/*/user detail widget*/
+  label {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}/*user detail widget*/
 
-/*online-offline status*/
+
 #connection-status {
-  /*display: flex;*/
   align-self: center;
   padding: 1px;
   border-radius: 10px;
   padding-left: 5px;
   padding-right: 5px;
-}
 
-#connection-status.online {
-  background: lightgray;
-  color: green;
-}
+  &.online {
+    background: lightgray;
+    color: green;
+  }
 
-#connection-status.offline {
-  background: lightgray;
-  color: red;
-}
-/*/online-offline status*/
+  &.offline {
+    background: lightgray;
+    color: red;
+  }
+}/*online-offline status*/
 
-/*buttons*/
-.main-container .button {
+
+.button {
   color: white;
   padding: 5px 13px 5px 12px;
   cursor: pointer;
@@ -220,21 +214,20 @@ div#user-container {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
 
-.main-container .button.button__delete {
-  background: #d93434;
-}
+  &.button__delete {
+    background: #d93434;
+  }
 
-.main-container .button.button__create {
-  background-color: #41c250;
-}
+  &.button__create {
+    background-color: #41c250;
+  }
 
-.main-container .button.button__add {
-  background-color: #49aadc;
-}
+  &.button__add {
+    background-color: #49aadc;
+  }
 
-.main-container .button.button__cancel {
-  background-color: orange;
-}
-/*buttons*/
+  &.button__cancel {
+    background-color: orange;
+  }
+}/*button*/
