@@ -8,9 +8,10 @@
     "serve": "browser-sync start --server --files build/* index.html",
     "preinstall": "npm i -g http-server",
     "test": "echo 'not implemented yet'",
-    "build": "npm run clean && NODE_ENV=production webpack && npm run sass",
+    "build": "npm run clean && NODE_ENV=production webpack && npm run sass && npm run autoprefixer",
     "sass": "node-sass --output-style compressed src/client/static/style/main.scss -o build/",
     "sass-watch": "node-sass -w --source-map-contents src/client/static/style/main.scss -o build/",
+    "autoprefixer": "postcss -u autoprefixer -r build/*.css",
     "clean": "rm -f build/*",
     "dev": "webpack --progress --colors --watch & npm run serve & npm run sass & npm run sass-watch"
   },
@@ -40,6 +41,7 @@
   },
   "homepage": "https://github.com/sfabrizio/rooty#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.7",
     "babel": "^6.5.2",
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.0",
@@ -51,6 +53,7 @@
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
     "node-sass": "^3.8.0",
+    "postcss-cli": "^2.5.2",
     "webpack": "^1.13.1"
   }
 }
