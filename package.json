@@ -4,14 +4,15 @@
   "description": "A Tiny user management system written in Vanilla.JS",
   "main": "index.js",
   "scripts": {
-    "start": "watch-http-server",
-    "preinstall": "npm i -g watch-http-server",
+    "start": "http-server",
+    "serve": "browser-sync start --server --files build/* index.html",
+    "preinstall": "npm i -g http-server",
     "test": "echo 'not implemented yet'",
     "build": "npm run clean && NODE_ENV=production webpack && npm run sass",
     "sass": "node-sass --output-style compressed src/client/static/style/main.scss -o build/",
     "sass-watch": "node-sass -w --source-map-contents src/client/static/style/main.scss -o build/",
     "clean": "rm -f build/*",
-    "dev": "webpack --progress --colors --watch & watch-http-server -o & npm run sass & npm run sass-watch"
+    "dev": "webpack --progress --colors --watch & npm run serve & npm run sass & npm run sass-watch"
   },
   "engines": {
     "node": "6.3.0"
@@ -46,6 +47,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
+    "browser-sync": "^2.13.0",
     "eslint": "^3.1.1",
     "eslint-loader": "^1.4.1",
     "node-sass": "^3.8.0",
