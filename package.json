@@ -7,11 +7,11 @@
     "start": "watch-http-server",
     "preinstall": "npm i -g watch-http-server",
     "test": "echo 'not implemented yet'",
-    "build": "NODE_ENV=production webpack && npm run sass",
-    "sass": "npm run clean && node-sass --output-style compressed src/client/static/style/main.scss -o build/",
+    "build": "npm run clean && NODE_ENV=production webpack && npm run sass",
+    "sass": "node-sass --output-style compressed src/client/static/style/main.scss -o build/",
     "sass-watch": "node-sass -w --source-map-contents src/client/static/style/main.scss -o build/",
-    "clean": "del build/main.css",
-    "dev": "webpack --progress --colors --watch & watch-http-server -o & npm run sass-watch"
+    "clean": "rm -f build/*",
+    "dev": "webpack --progress --colors --watch & watch-http-server -o & npm run sass & npm run sass-watch"
   },
   "engines": {
     "node": "6.3.0"
