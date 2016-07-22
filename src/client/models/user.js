@@ -43,7 +43,6 @@ export default ( () => {
 
     //////////
 
-    model.getUsers = getMocUsers; //replace with the real method here
     model.getUser = getUser;
     model.fetchAll = fetchAll;
 
