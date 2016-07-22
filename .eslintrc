@@ -18,7 +18,7 @@
     "escape": false,
     "unescape": false,
     "describe": true,
-    "before": true,
+    "beforeEach": true,
     "it": true,
     "expect": true
   },
