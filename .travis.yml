@@ -1,3 +1,5 @@
 language: node_js
 node_js:
   - "6"
+notifications:
+  slack: guachinhub:U5dvtl91ZsyKu4hcRzDKYH1R
