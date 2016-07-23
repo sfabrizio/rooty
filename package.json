@@ -17,6 +17,7 @@
     "dev": "webpack --progress --colors --watch & npm run serve & npm run sass & npm run sass-watch",
     "pretest": "npm run clean:tmp && babel src --out-dir .tmp",
     "test": "jasmine-node --verbose --captureExceptions .tmp",
+    "test:watch": "onchange src/client/**/*.js -- npm test",
     "prepublish": "npm test"
   },
   "engines": {
@@ -57,6 +58,7 @@
     "eslint-loader": "^1.4.1",
     "jasmine-node": "^1.14.5",
     "node-sass": "^3.8.0",
+    "onchange": "^2.5.0",
     "postcss-cli": "^2.5.2",
     "webpack": "^1.13.1"
   }
