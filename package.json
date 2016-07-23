@@ -7,7 +7,7 @@
     "start": "http-server",
     "serve": "browser-sync start --server --files build/* index.html",
     "preinstall": "npm i -g http-server jasmine-node babel-cli",
-    "prebuild": "npm run clean && NODE_ENV=production",
+    "prebuild": "npm run clean && mkdir -p build",
     "build": "webpack && npm run sass && npm run autoprefixer",
     "sass": "node-sass --output-style compressed src/client/static/style/main.scss -o build/",
     "sass-watch": "node-sass -w --source-map-contents src/client/static/style/main.scss -o build/",
