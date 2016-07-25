@@ -1,5 +1,9 @@
-export default ( () => {
-    const model = {};
+import config from '../config.js';
+
+export default ( (config) => {
+    const model = {
+        url: [config.backendUrl, 'groups'].join('/')
+    };
 
     function fetchAll () {
         return getMocGroups().then( (groups) => {
@@ -13,13 +17,13 @@ export default ( () => {
             const reqObj = new XMLHttpRequest();
 
             reqObj.overrideMimeType('application/json');
-            reqObj.open('GET', 'data.json', true); //local file
+            reqObj.open('GET', model.url, true); //local file
             reqObj.onreadystatechange = () => {
                 if (reqObj.readyState === 4 && reqObj.status === 200) {
                     const data = JSON.parse(reqObj.responseText);
 
                     setTimeout( () => {
-                        resolve(data.groups);
+                        resolve(data);
                     },2000);
                 } else if (reqObj.readyState === 4 && reqObj.status !== 200) {
                     reject('loading error');
@@ -35,4 +39,4 @@ export default ( () => {
     model.getGroups = getMocGroups;
 
     return model;
-})();
+})(config);
