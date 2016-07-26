@@ -61,5 +61,8 @@
     "onchange": "^2.5.0",
     "postcss-cli": "^2.5.2",
     "webpack": "^1.13.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
