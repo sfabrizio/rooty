@@ -1,4 +1,4 @@
-import config from '../config.js';
+import config from '../../config.js';
 
 export default ( (config) => {
     const model = {
@@ -14,7 +14,6 @@ export default ( (config) => {
 
     function getMocUsers() {
         return new Promise( (resolve, reject) => {
-
             if (model.users && model.users.length > 0) {
                 return model.users;
             }
