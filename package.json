@@ -19,6 +19,7 @@
     "clean:tmp": "rm -rf .tmp/*",
     "copy": "cp -R index.html build/index.html",
     "copy:watch": "onchange index.html -- npm run copy",
+    "dev": "webpack --progress --colors --watch & npm run server & npm run sass & npm run sass-watch & npm run copy:watch",
     "pretest": "npm run clean:tmp && babel src --out-dir .tmp",
     "test": "jasmine-node --verbose --captureExceptions .tmp",
     "test:watch": "onchange src/client/**/*.js -- npm test",
