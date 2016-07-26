@@ -1,16 +1,21 @@
 const http = require('http'),
     express = require('express'),
     path = require('path'),
+    config = require('../config'),
     app = express(),
     server = http.createServer(app);
 
 app.use(express.static(path.join(__dirname + '/../../build')));
 app.use('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/../../index.html'));
+    if (!req.get('port')) { //force redirect to mockup server
+        res.redirect(['http://localhost:3000',req.originalUrl].join(''));
+    } else {
+        res.sendFile(path.join(__dirname + '/../../build/index.html'));
+    }
 });
 
-app.set('port', (process.env.PORT || 9000));
+app.set('port', config.port );
 
 server.listen(app.get('port'), () => {
-    console.log( ['Server started; listening on port', app.get('port')].join(': ') );
+    console.log( 'Server start at: ', [config.host, config.port].join(':'));
 });
