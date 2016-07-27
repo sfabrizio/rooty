@@ -4,7 +4,6 @@
   "description": "A Tiny user management system written in Vanilla.JS",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run build",
     "start": "npm run mock-server & node --harmony src/server/server.js",
     "server": "debug=true nodemon src/server/server.js & npm run mock-server",
     "client": "browser-sync start --server --files build/*",
