@@ -1,12 +1,12 @@
 {
   "name": "rooty",
   "version": "0.1.1",
-  "description": "A Tiny user management system written in Vanilla.JS",
+  "description": "A Tiny user management system written in Vanilla.JS/Express",
   "main": "index.js",
   "scripts": {
     "start": "node --harmony src/server/server.js",
     "server": "debug=true nodemon src/server/server.js & npm run mock-server",
-    "client": "browser-sync start --server --files build/*",
+    "client": "webpack --progress --colors --watch & npm run sass & npm run sass-watch & npm run copy:watch",
     "mock-server": "json-server --watch data.json",
     "preinstall": "npm i -g nodemon jasmine-node babel-cli json-server",
     "prebuild": "npm run clean && mkdir -p build",
@@ -19,7 +19,6 @@
     "clean:tmp": "rm -rf .tmp/*",
     "copy": "cp -R index.html build/index.html",
     "copy:watch": "onchange index.html -- npm run copy",
-    "dev": "webpack --progress --colors --watch & npm run server & npm run sass & npm run sass-watch & npm run copy:watch",
     "pretest": "npm run clean:tmp && babel src --out-dir .tmp",
     "test": "jasmine-node --verbose --captureExceptions .tmp",
     "test:watch": "onchange src/client/**/*.js -- npm test",
