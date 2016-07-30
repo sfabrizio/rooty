@@ -4,7 +4,7 @@
 
 # Rooty
 
-A Tiny user management system written in Vanilla JS on ES6
+A Tiny user management system written in Vanilla JS on ES6 and Node & Express
 
 
 ## Install 
@@ -13,17 +13,26 @@ A Tiny user management system written in Vanilla JS on ES6
 npm install
 ```
 
-## Run dev server with hot reloading
+## Run backend server with auto reloading 
 
 ```
-npm run dev
+npm run server
 ```
+
+
+## Run frontend server with auto transpiler  
+
+```
+npm run client
+```
+
+> Now you can see the app on this URL: `http://localhost:9000`
 
 ## TODO (This is a work in progress)
 
 - Finish the basic app functionality: assign groups & deletion
 - Add form validations.
-- Add unit tests with Jasmine
+- Add unit tests
 - build of SASS file & migrate existing CSS
 - Create login functionality 
 - Add more offline features 
