@@ -8,20 +8,10 @@ export default ( (userModel) => {
     return {
         render,
         showDetail,
-        hideDetail,
-        showLoadIndicator,
-        hideLoadIndicator
+        hideDetail
     };
 
     /////////////
-
-    function showLoadIndicator () {
-        //TODO
-    }
-
-    function hideLoadIndicator () {
-        self.userListDiv.innerHTML = '';
-    }
 
     function render(users) {
         for (let i = 0; i < users.length; i++) {
@@ -39,7 +29,6 @@ export default ( (userModel) => {
         id.textContent = user.id;
         rowDiv.appendChild(name);
         rowDiv.appendChild(id);
-        // rowDiv.setAttribute('id',`row-user-${user.id}`);
         self.userListDiv.appendChild(rowDiv);
     }
 
