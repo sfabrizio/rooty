@@ -33,10 +33,18 @@ export default ( (config) => {
         });
     }
 
+    function getGroup(groupId) {
+        const group = model.groups.filter( (group) => {
+            return group.id === groupId;
+        });
+
+        return group[0] || [];
+    }
+
     ////////////
 
     model.fetchAll = fetchAll;
-    model.getGroups = getMocGroups;
+    model.getGroup = getGroup;
 
     return model;
 })(config);
