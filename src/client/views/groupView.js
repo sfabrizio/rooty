@@ -13,7 +13,9 @@ export default ( () => {
 
     function init() {
         //init stuff
-        self.groupListDiv = document.getElementById('group-list');
+        self.groupListDiv = document.querySelector('#group-list');
+    }
+
     function hideLoadIndicator () {
         self.groupListDiv.innerHTML = '';
     }
@@ -25,7 +27,7 @@ export default ( () => {
     }
 
     function createGroupRow(group) {
-        const groupListDiv = document.getElementById('group-list'),
+        const groupListDiv = document.querySelector('#group-list'),
             rowDiv = document.createElement('div'),
             name = document.createElement('div'),
             id = document.createElement('div');
