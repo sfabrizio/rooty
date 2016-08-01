@@ -3,7 +3,7 @@ import userModel from '../models/user';
 export default ( (userModel) => {
     const self = {};
 
-    self.userListDiv = document.getElementById('user-list');
+    self.userListDiv = document.querySelector('#user-list');
 
     return {
         render,
