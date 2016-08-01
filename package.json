@@ -21,7 +21,7 @@
     "copy:watch": "onchange index.html -- npm run copy",
     "pretest": "npm run clean:tmp && babel src --out-dir .tmp",
     "test": "jasmine-node --verbose --captureExceptions .tmp",
-    "test:watch": "npm test & onchange src/client/**/*.js src/client/**/*.spec.js -- npm test",
+    "test:watch": "npm test & onchange src/client/*.js src/client/**/*.js src/client/**/*.spec.js -- npm test",
     "prepublish": "npm test"
   },
   "engines": {
