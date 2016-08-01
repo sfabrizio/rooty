@@ -1,4 +1,6 @@
-export default ( () => {
+import { _document } from '../globals';
+
+export default ( (_document) => {
     const self = {};
 
     init();
@@ -13,7 +15,7 @@ export default ( () => {
 
     function init() {
         //init stuff
-        self.groupListDiv = document.querySelector('#group-list');
+        self.groupListDiv = _document.querySelector('#group-list');
     }
 
     function hideLoadIndicator () {
@@ -27,10 +29,10 @@ export default ( () => {
     }
 
     function createGroupRow(group) {
-        const groupListDiv = document.querySelector('#group-list'),
-            rowDiv = document.createElement('div'),
-            name = document.createElement('div'),
-            id = document.createElement('div');
+        const groupListDiv = _document.querySelector('#group-list'),
+            rowDiv = _document.createElement('div'),
+            name = _document.createElement('div'),
+            id = _document.createElement('div');
 
         rowDiv.className = 'body_row';
         name.textContent = group.name;
@@ -43,4 +45,4 @@ export default ( () => {
     function showDetail(modelID) {
         //TODO
     }
-})();
+})(_document);
