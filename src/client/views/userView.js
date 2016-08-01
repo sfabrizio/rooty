@@ -8,10 +8,16 @@ export default ( (userModel) => {
     return {
         render,
         showDetail,
-        hideDetail
+        hideDetail,
+        hideLoadIndicator
     };
 
     /////////////
+
+
+    function hideLoadIndicator () {
+        self.userListDiv.innerHTML = '';
+    }
 
     function render(users) {
         for (let i = 0; i < users.length; i++) {
