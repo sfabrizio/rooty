@@ -1,9 +1,10 @@
+import { _document } from '../globals';
 import userModel from '../models/user';
 
-export default ( (userModel) => {
+export default ( (_document, userModel) => {
     const self = {};
 
-    self.userListDiv = document.querySelector('#user-list');
+    self.userListDiv = _document.querySelector('#user-list');
 
     return {
         render,
@@ -26,9 +27,9 @@ export default ( (userModel) => {
     }
 
     function createUserRow(user) {
-        const rowDiv = document.createElement('div'),
-            name = document.createElement('div'),
-            id = document.createElement('div');
+        const rowDiv = _document.createElement('div'),
+            name = _document.createElement('div'),
+            id = _document.createElement('div');
 
         rowDiv.className = 'body_row';
         name.textContent = user.userName;
@@ -41,7 +42,7 @@ export default ( (userModel) => {
     function showDetail(userId) {
         if (!userId) { return; }
 
-        const detailUserDiv = document.querySelector('#user-detail-container'),
+        const detailUserDiv = _document.querySelector('#user-detail-container'),
             user = userModel.getUser(userId);
 
         setDetailUserDiv(user);
@@ -53,10 +54,10 @@ export default ( (userModel) => {
     }
 
     function setDetailUserDiv(user) {
-        const firstName = document.querySelector('#user_firstName'),
-            lastName = document.querySelector('#user_lastName'),
-            isAdmin = document.querySelector('#user_isAdmin'),
-            groupId = document.querySelector('#user_group_id');
+        const firstName = _document.querySelector('#user_firstName'),
+            lastName = _document.querySelector('#user_lastName'),
+            isAdmin = _document.querySelector('#user_isAdmin'),
+            groupId = _document.querySelector('#user_group_id');
 
         firstName.textContent = user.firstName;
         lastName.textContent = user.lastName;
@@ -65,8 +66,8 @@ export default ( (userModel) => {
     }
 
     function hideDetail() {
-        const detailUserDiv = document.querySelector('#user-detail-container');
+        const detailUserDiv = _document.querySelector('#user-detail-container');
 
         detailUserDiv.className = 'make-hidden';
     }
-})(userModel);
+})(_document, userModel);
