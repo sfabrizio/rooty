@@ -5,7 +5,8 @@ export default ( () => {
 
     return {
         render,
-        showDetail
+        showDetail,
+        hideLoadIndicator
     };
 
     /////////////
@@ -13,6 +14,8 @@ export default ( () => {
     function init() {
         //init stuff
         self.groupListDiv = document.getElementById('group-list');
+    function hideLoadIndicator () {
+        self.groupListDiv.innerHTML = '';
     }
 
     function render(groups) {
