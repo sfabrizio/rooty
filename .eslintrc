@@ -12,7 +12,7 @@
     "node": true
   },
   "globals": {
-    "document": true,
+    "document": false,
     "window": true,
     "navigator": true,
     "escape": false,
