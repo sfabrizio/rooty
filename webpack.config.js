@@ -1,7 +1,15 @@
 const debug = process.env.NODE_ENV !== 'production', //process.env.npm_lifecycle_event
     webpack = require('webpack'),
-    path = require('path');
+    path = require('path'),
+    plugins = [];
 
+if (!debug) {
+    plugins.concat([
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
+    ]);
+}
 
 module.exports = {
     context: __dirname,
@@ -25,9 +33,5 @@ module.exports = {
             }
         ]
     },
-    plugins: debug ? [] : [
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
-    ]
+    plugins
 };
