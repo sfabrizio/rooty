@@ -6,7 +6,7 @@ const imports = [ _document, _fetch, userModel];
 export default ( (_document, _fetch, userModel) => {
     const self = {};
 
-    self.templateUrl = 'templates/user.html';
+    self.templateUrl = 'templates/userView.html';
 
     init();
 
