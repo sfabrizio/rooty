@@ -1,10 +1,13 @@
-import { _document } from '../globals';
+import { _document, _fetch } from '../globals';
 import userModel from '../models/user';
 
-export default ( (_document, userModel) => {
+
+export default ( (_document, _fetch, userModel) => {
     const self = {};
 
-    self.userListDiv = _document.querySelector('#user-list');
+    self.templateUrl = 'templates/user.html';
+
+    init();
 
     return {
         render,
@@ -15,6 +18,22 @@ export default ( (_document, userModel) => {
 
     /////////////
 
+    function init() {
+        self.template = loadTemplate().then( (response) => {
+            return response.text();
+        }).then( (templateString) => {
+            const containerSpan = document.createElement('span');
+
+            self.mainDivSelector = _document.querySelector('#user-container');
+            containerSpan.innerHTML = templateString;
+            self.mainDivSelector.appendChild(containerSpan);
+            self.userListDiv = _document.querySelector('#user-list');
+        });
+    }
+
+    function loadTemplate () {
+        return _fetch(self.templateUrl);
+    }
 
     function hideLoadIndicator () {
         self.userListDiv.innerHTML = '';
@@ -70,4 +89,4 @@ export default ( (_document, userModel) => {
 
         detailUserDiv.className = 'make-hidden';
     }
-})(_document, userModel);
+})(_document, _fetch, userModel);
