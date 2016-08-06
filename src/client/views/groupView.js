@@ -1,5 +1,7 @@
 import { _document } from '../globals';
 
+const imports = [ _document];
+
 export default ( (_document) => {
     const self = {};
 
@@ -45,4 +47,4 @@ export default ( (_document) => {
     function showDetail(modelID) {
         //TODO
     }
-})(_document);
+})(...imports);
