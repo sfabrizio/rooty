@@ -10,75 +10,9 @@
     <div class="header">
         <a href="/">Rooty</a> <span id="connection-status"></span>
     </div>
+
     <div id="user-container" class="container">
-        <div class="container-title">
-            <span><h2>Users</h2></span>
-        </div>
-        <div class="container-row">
-            <div class="user-container-list">
-                <div class="container-list_header">
-                    <div class="list-header_column"><label>UserName</label></div>
-                    <div class="list-header_column"><label>ID</label></div>
-                </div>
-                <div id="user-list" class="container-list_body">
-                    <img src="/images/loader.gif">
-                </div>
-            </div>
-            <div class="user-container-create">
-                <div class="container-list_header">
-                    <div class="list-header_column"><label>New User</label></div>
-                </div>
-                <div class="container-input">
-                    <div class="input__row">
-                        <div>
-                            <label for="user_userName-input">User Name</label>
-                            <input id="user_userName-input" type="text">
-                        </div>
-                        <div>
-                            <label for="user_firstName-input">Name</label>
-                            <input id="user_firstName-input" type="text">
-                        </div>
-                    </div>
-                    <div class="input__row">
-                        <div>
-                            <label for="user-lastName-input">Last Name</label>
-                            <input type="text" id="user-lastName-input">
-                        </div>
-                        <div>
-                            <label for="user_isAdmin-input">Admin</label>
-                            <input id="user_isAdmin-input" type="checkbox">
-                        </div>
-                    </div>
-
-                    <div class="input__row">
-                        <div>
-                            <label for="user-groups-select">Groups</label>
-                            <span>
-                                <select name="groups-select" id="user-groups-select">
-                                    <option value="sda">Saraaa</option>
-                                    <option value="33">32232</option>
-                                </select>
-                            </span>
-                        </div>
-                        <div>
-                            <span><a class="button button__add" href="" >Add</a></span>
-                            <textarea name="" id=""></textarea>
-                        </div>
-                    </div>
-                    <div class="input__row">
-                        <span><a class="button button__create" href="" onclick="createUser()">Create</a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="user-detail-container">
-            <label>Name:</label><span id="user_firstName"></span>
-            <label>Last Name:</label><span id="user_lastName"></span>
-            <label>is Admin:</label><span id="user_isAdmin"></span>
-            <label>Group id:</label><span id="user_group_id"></span>
-        </div>
     </div>
-
 
     <div id="groups-container" class="container">
         <div class="container-title">
