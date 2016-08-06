@@ -1,9 +1,11 @@
-import { _document } from '../globals';
+import { _document, _fetch } from '../globals';
 
-const imports = [ _document];
+const imports = [ _document, _fetch];
 
-export default ( (_document) => {
+export default ( (_document, _fetch) => {
     const self = {};
+
+    self.templateUrl = 'templates/groupView.html';
 
     init();
 
@@ -16,8 +18,20 @@ export default ( (_document) => {
     /////////////
 
     function init() {
-        //init stuff
-        self.groupListDiv = _document.querySelector('#group-list');
+        self.template = loadTemplate().then( (response) => {
+            return response.text();
+        }).then( (templateString) => {
+            const containerSpan = document.createElement('span');
+
+            self.mainDivSelector = _document.querySelector('#group-container');
+            containerSpan.innerHTML = templateString;
+            self.mainDivSelector.appendChild(containerSpan);
+            self.groupListDiv = _document.querySelector('#group-list');
+        });
+    }
+
+    function loadTemplate () {
+        return _fetch(self.templateUrl);
     }
 
     function hideLoadIndicator () {
