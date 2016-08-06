@@ -1,6 +1,7 @@
 import { _document, _fetch } from '../globals';
 import userModel from '../models/user';
 
+const imports = [ _document, _fetch, userModel];
 
 export default ( (_document, _fetch, userModel) => {
     const self = {};
@@ -89,4 +90,4 @@ export default ( (_document, _fetch, userModel) => {
 
         detailUserDiv.className = 'make-hidden';
     }
-})(_document, _fetch, userModel);
+})(...imports);
