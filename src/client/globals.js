@@ -17,7 +17,9 @@ try {
 try { //TODO: add fetch polyfill
     _fetch = window.fetch;
 } catch (err) {
-    _fetch = () => {};
+    _fetch = () => {//mock fetch for now
+        return new Promise( (resolve, reject) => {});
+    };
 }
 
 export  { _document, _fetch };
