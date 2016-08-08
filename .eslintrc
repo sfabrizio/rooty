@@ -20,7 +20,8 @@
     "describe": true,
     "beforeEach": true,
     "it": true,
-    "expect": true
+    "expect": true,
+    "spyOn": true
   },
   "parser": "babel-eslint",
   "plugins": [],
