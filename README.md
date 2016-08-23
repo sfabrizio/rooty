@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/sfabrizio/rooty.svg?branch=master)](https://travis-ci.org/sfabrizio/rooty)
 [![bitHound Overall Score](https://www.bithound.io/github/sfabrizio/rooty/badges/score.svg)](https://www.bithound.io/github/sfabrizio/rooty)
 [![bitHound Dependencies](https://www.bithound.io/github/sfabrizio/rooty/badges/dependencies.svg)](https://www.bithound.io/github/sfabrizio/rooty/master/dependencies/npm)
+[![Code Climate](https://codeclimate.com/github/sfabrizio/rooty/badges/gpa.svg)](https://codeclimate.com/github/sfabrizio/rooty)
 
 # Rooty
 
@@ -41,7 +42,7 @@ npm run client
 
 
 > **Note:** 
-> This is only the FrontEnd part. I'm using mockup data at the moment. But these are the endpoints expected to have on the Backend:
+> This is only the FrontEnd part. I'm using a mockup server api at the moment. But these are the endpoints expected to have on the Backend:
 
 - `/users` with methods [GET,POST, PUT & DELETE]
 - `/groups` with methods [GET,POST, PUT & DELETE]
